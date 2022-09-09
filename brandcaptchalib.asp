@@ -31,7 +31,7 @@
 ' returns the HTML for the widget
 function brandcaptcha_challenge_writer(public_key)
     brandcaptcha_challenge_writer = _
-    "<script type=""text/javascript"" src=""//api.pontamedia.net/challenge.php?k=" & public_key & """></script>"
+    "<script type=""text/javascript"" src=""//api.ponta.co/challenge.php?k=" & public_key & """></script>"
 end function
 
 ' returns "" if correct, otherwise it returns the error response
@@ -46,7 +46,7 @@ function brandcaptcha_confirm(rechallenge,reresponse, private_key)
 
     Dim objXmlHttp
     Set objXmlHttp = Server.CreateObject("Msxml2.ServerXMLHTTP")
-    objXmlHttp.open "POST", "http://api.pontamedia.net/verify.php", False
+    objXmlHttp.open "POST", "http://api.ponta.co/verify.php", False
     objXmlHttp.setRequestHeader "Content-Type", "application/x-www-form-urlencoded"
     objXmlHttp.send VarString
 
